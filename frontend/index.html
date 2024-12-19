@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAO Crowdfunding Platform</title>
+    <link rel="stylesheet" href="./styles.css">
+    <!-- Include ethers.js from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="wallet-status">
+            <span id="wallet-address">Not connected</span>
+            <button id="connect-wallet">Connect Wallet</button>
+        </div>
+
+        <div class="header">
+            <h1>DAO Crowdfunding Platform</h1>
+        </div>
+
+        <div class="create-project">
+            <h2>Create New Project</h2>
+            <form id="create-project-form">
+                <div class="form-group">
+                    <label for="project-name">Project Name</label>
+                    <input type="text" id="project-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="project-description">Description</label>
+                    <textarea id="project-description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="funding-goal">Funding Goal (ETH)</label>
+                    <input type="number" id="funding-goal" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="duration">Duration (days)</label>
+                    <input type="number" id="duration" required>
+                </div>
+                <button type="submit">Create Project</button>
+            </form>
+        </div>
+
+        <div class="projects-grid" id="projects-container">
+            <!-- Projects will be dynamically added here -->
+        </div>
+
+        <div class="loader" id="loader">Loading...</div>
+    </div>
+
+    <!-- Include your JavaScript file -->
+    <script src="js/main.js"></script>
+</body>
+</html>
